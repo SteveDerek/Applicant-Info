@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Middle Finger Emoji</title>
+    <style>
+        body {
+            background-color: purple;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .polka-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .polka-dot {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 3px;
+            height: 3px;
+        }
+        .emoji-container {
+            text-align: center;
+        }
+        .emoji {
+            font-size: 200px;
+            animation: spin 5s linear infinite;
+            font-weight: bold;
+            display: inline-block;
+            transform-origin: center;
+        }
+        h1 {
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            animation: none; /* Remove the pulse animation */
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="polka-dots">
+        <!-- Scatter polka dots across the screen -->
+        <script>
+            for (let i = 0; i < 100; i++) {
+                let dot = document.createElement('div');
+                dot.className = 'polka-dot';
+                dot.style.top = Math.random() * 100 + 'vh';
+                dot.style.left = Math.random() * 100 + 'vw';
+                document.querySelector('.polka-dots').appendChild(dot);
+            }
+        </script>
+    </div>
+    <div class="emoji-container">
+        <div class="emoji">🖕</div>
+        <h1>Fuck you, oke</h1>
+    </div>
+</body>
+</html>
